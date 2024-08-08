@@ -1,0 +1,349 @@
+// 
+#home{
+    position: relative;
+    
+    .app__wrapper{
+        padding: 0;
+        .copyright{
+            display:none;
+        }
+    }
+
+}
+.head-text1{
+    color: rgb(255, 255, 255);
+    span{
+        color: orangered;
+    }
+}
+
+.app__header{
+    background-image: url(../../assets/bgWhite.png);
+    background-position: center;
+    background-size: cover;
+ 
+    overflow: hidden;
+    flex: 1;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    padding: 6rem 2rem 0;
+
+    @media screen and (min-width:2000px) {
+        padding-top:8rem;
+    }
+    @media screen and (max-width:1200px) {
+        flex-direction: column;
+    }
+    @media screen and (max-width:450px){
+        padding: 6rem 1rem rem;
+        
+    }
+    @media screen and (max-width:900px) {
+        padding-top: 0.5rem;
+        
+      } 
+}
+.app__header-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+
+    @media screen and (max-width:2000px){
+        width: 100%;
+        margin-right: 0rem;
+    }
+}
+.app__header-badge{
+    padding: 30px;
+   
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+
+    .badge-cmp{
+        padding: 1rem 2rem;
+        border: rgb(172, 168, 168);
+        background-color: rgb(229, 229, 229);
+        border-radius: 10px;
+        flex-direction: row;
+        width: auto;
+        margin-bottom: 10px;
+        
+        box-shadow: 0 0 20px rgba($color: #cbcaca, $alpha: 0.87);
+    }
+    .tag-camp{
+        padding: 10px;
+        text-transform: uppercase;
+        justify-content: center;
+        align-items: center;
+       
+        
+    }
+    .tag-camp .text{
+        margin-bottom: 5px;
+        font-family: 'Times New Roman';
+        font-weight: 900;
+        color: #120202d8;
+        font-size: 20px;
+    }
+    .badge-cmp h1{
+        font-family: 'Times New Roman';
+    }
+    .badge-cmp p{
+        font-family: 'Times New Roman';
+        font-size: 20px;
+    }
+    .badge-cmp span{
+        font-family: 'Times New Roman';
+        font-size: 15px;
+    }
+
+    @media screen  and (max-width:1200px){
+        justify-content: flex-start;
+        align-items: flex-start;
+        
+    }
+}
+.app__header-circles{
+    padding: 15px;
+    flex: 0.75;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    @media screen and (max-width:900px) {
+        padding: 5px;
+        margin-left: 0rem;
+        
+      } 
+    
+
+    div{
+
+        margin-bottom: 10px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+
+        background: rgb(255, 255, 255);
+        box-shadow: 2px 2px 2px 2px rgb(122, 122, 122);
+
+        img{
+            width: 80%;
+            height: 80%;
+        }
+    }
+    div:nth-child(1){
+        margin-left: 3rem;
+        @media screen and (max-width:900px) {
+            margin-left:0.5rem ;
+            
+          } 
+    }
+    div:nth-child(4){
+        margin-left: 3rem;
+        @media screen and (max-width:900px) {
+            margin-left:0.5rem ;
+            
+          } 
+    }
+    div:nth-child(5){
+        margin-right: 3rem;
+        @media screen and (max-width:900px) {
+            margin-left:0.5rem ;
+            
+          } 
+    }
+
+   @media screen and (max-width:1200px) {
+       display: flex;
+       flex-direction: row;
+       div{
+        width: 50px;
+        height: 50px;
+        margin: 6px;
+       }
+   }
+   
+}
+
+.app__header-image{
+    
+
+    
+    z-index: -20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: inherit;
+    transition: all 0.45s ease-in-out;
+
+    .profimage{
+        width: auto;
+        height: 500px;
+       
+    }
+    @media screen and (max-width:700px) {
+       
+        .profimage{
+         width: auto;
+         height: 200px;
+         margin: 6px;
+        }
+    }
+    
+}
+
+import React,{useNavigate, useState} from 'react'
+import "./Header.scss"
+// import { AppWrap } from '../../wrapper/Appwrap';
+import {motion} from 'framer-motion'
+import {images} from "../../Constants"
+import { useEffect } from 'react';
+import {urlFor,client} from '../../client'
+
+const scaleVariants = {
+  whileInView: {
+    scale: [0, 1],
+    opacity: [0, 1],
+    transition: {
+      duration: 1,
+      ease: 'easeInOut',
+    },
+  },
+};
+function Header() {
+  const [proimg,setProimg]=useState([])
+ 
+  useEffect(()=>{
+    const query='*[_type == "header"]'
+
+    client.fetch(query)
+    .then((data)=>setProimg(data))
+  })
+  return (
+    <!-- <div id='Home' className='app__header app__flex' >
+        
+        <motion.div
+         whileInView={{y:[0,40],opacity:[0,1]}}
+         transition={{duration:2}}
+         className="app__header-info"
+      >
+        <div className='app__header-badge'>
+          <div className="badge-cmp app__flex">
+             
+             <div style={{marginLeft:20}}>
+                 <span className='p-text'>Wellcome</span>
+                 <p className="p_text">Hello,I am</p>
+                <h1 className="headtext">Fraol Dabi</h1>
+             </div>     
+          </div>
+          <div className='tag-camp'>
+               <h2 className="head-text1">React-js Front<span>End Web Developer</span></h2>
+               <h2 className="head-text1">UX/UI <span>Designer</span></h2>
+               <h2 className="head-text1">FREE<span>Ler</span></h2>
+               
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+         whileInView={{z:[0,50],opacity:[0,1]}}
+         transition={{duration:1,delayChildren:0.5}}
+         className="app__header-image"
+      > 
+      {proimg.map((image)=>(
+          <motion.img
+                     whileInView={{scale:[0.8,1],opacity:[0,1]}}
+                     transition={{duration:2,ease:"easeInOut"}}
+                     className="profimage" 
+                     src={urlFor(image.img)}
+                     alt="profile-img"
+          />
+
+      ))}
+
+      </motion.div>
+
+
+         <motion.div
+            variants={scaleVariants}
+            whileInView={{x:[0,20],opacity:[0,1]}}
+            className="app__header-circles"
+      >
+          {[{name:'JavaScript',img:images.javascript},{name:'React',img:images.react},{name:'Figma',img:images.figma},{name:'JNode',img:images.node}].map((tech,index)=>(
+              <div className="circle-tech app__flex" key={tech}>
+                 <img src={tech.img} alt="tech-img"/>
+                 
+              </div>
+          ))}
+
+      </motion.div>
+        
+    </div> -->
+  )
+}
+
+export default Header
+
+<div className="app__footer">
+    <div className="footer">
+        <h2 className="head-text">I Look <span>Forward To Hear</span><br/>From You <span>Contact ME</span></h2>
+        <div className="alling">
+            <div className='summary'>aim to design a user freindly responsive 
+               <br/>and interactive web desinges with modern <br/> 
+               user interface design is my main concern.
+            </div>
+            
+            <div className="what">
+               <h3>tasks</h3>
+    <ul>
+      <li>web developement</li>
+      <li>ux / ui desing</li>
+      <li>desing into code converstion</li>
+      <li>code debugging</li>
+    </ul>
+             </div>
+
+           <div className="tech">
+              <h3>Technologies</h3>
+    <ul>
+      <li>ReactJs</li>
+      <li>JavaScript</li>
+      <li>Nodejs</li>
+      <li>Figma</li>
+      <li>AdobeXd</li>
+      <li>TeleportHq</li>
+    </ul>
+            </div>
+
+  <div id='Contact me' className="app__footer-cards">
+      {  contact.map((each,index)=>(
+      <div className="app__footer-card ">
+        {/* <img src={urlFor(each.img)} alt={each.name} />
+        <a href={each.link} className="p-text">{each.name}</a> */}
+        <img src={images.upwork} alt="upwork" />
+        <a className="p-text">upwork</a>
+      </div>       
+    ))}
+   
+
+  </div>
+   </div>
+      <div className="line">
+        <BiPhone/>AddisAbaba,Ethiopia/fraol0411@gmail.com/+251964308437
+        <hr/>
+      </div>
+      
+ </div>
+
+</div>

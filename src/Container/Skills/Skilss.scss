@@ -1,0 +1,138 @@
+.SEC__container{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background-color: white;
+    height: 80vh;
+    background-image: url(../../assets/bgWhitec.png);
+    background-position: center;
+    background-size: cover;
+    @media screen and (max-width:450px){
+        height: fit-content;
+        
+    }
+
+}
+// firts div for skill
+.part1{
+    margin: 1rem;
+    width: 500px; 
+     
+    box-sizing: border-box;
+
+   .app__skills{
+       padding: 10px;
+  
+
+       .app__skill-list{
+        margin-top: 0.5rem;
+         display: flex;
+         justify-content: flex-start;
+         align-items: flex-start;
+         flex-wrap: wrap;
+
+         .app__skills-item{
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+
+            .skill-img{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: white;
+                box-shadow: 0rem 0rem 2rem 0rem rgb(218, 218, 218);
+
+                img{
+                    width: 65%;
+                    height: 65%;
+                }
+            }
+         }
+       }
+   }
+}
+// second div for expirence
+.part2{
+    margin: 0rem 0rem;
+    min-width: 200px; 
+    box-sizing: border-box;
+    
+
+    .app__exprience{
+        margin-top: 1rem;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        .app__skills-exp{
+            box-shadow: 0rem 0rem 2rem 0rem rgb(207, 207, 207);
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            .app__skills-exp-work{
+                padding: 10px;
+                h4{
+                    font-size: 15px;
+                    color: rgb(94, 94, 94);
+                }
+                h3{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width:740px) {
+        margin-top: 0rem;
+        margin-left: 3rem;
+        justify-content: center;
+        align-items: center;
+    }
+}
+// 
+.part3{
+    margin: 1rem;
+    min-width: 200px; 
+    text-align: center;  
+    box-sizing: border-box;
+
+    .tempo{
+       
+        width: 100%;
+        img{
+            height: 90%;
+            width: 100%;
+        }
+    }
+
+    .app__certificate{
+        text-align: center;
+        
+        .app__skills-cert-works{
+            box-shadow: 0rem 0rem 2rem -1rem rgb(194, 194, 194);
+            .app__skills-cert-work{
+                  height: 300px;
+                  width: 100%;
+                img{
+                    height: 70%;
+                    width: 100%;
+                    
+                }
+                h4{
+                    font-size: 20px;
+                    color: rgb(57, 57, 57);
+                }
+            }
+        }
+    }
+    @media screen and (max-width:740px) {
+        margin-top: 0rem;
+        margin-left: 0rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+}

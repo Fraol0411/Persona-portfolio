@@ -1,0 +1,145 @@
+.app__works{
+    flex:1;
+    width: 100%;
+    flex-direction: column;
+    
+}
+.aaa{
+    // height: 100vh;
+    height: fit-content;
+    background-image: url(../../assets/bgWhite.png);
+    background-position: center;
+    background-size: cover;
+    @media screen and (max-width:450px){
+        height: fit-content;
+        
+    }
+}
+.head-text{
+    margin-top: 3rem;
+}
+.app__work-filter{
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0rem 2rem;
+    .app__work-filter-each{
+        background-color: rgb(28, 28, 43,0.98);
+        margin: 1rem;
+        
+        padding: 5px;
+        font-size: 14px;
+        color: white;
+        border-radius: 5px;
+        box-shadow: 0rem 0rem 1.5rem 0rem rgb(95, 95, 95);
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover{
+            transition: all 0.8s ease;
+            background-color: rgb(170, 46, 0);
+            
+        }
+
+        @media screen and (min-width:1200px) {
+            margin: 4rem;
+            font-size: 18px;
+            width: 200px;
+        }
+    }
+    .item-active{
+        background-color:  rgb(170, 46, 0);
+       
+    }
+}
+.app__work-portfolio{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: fit-content;
+    
+   
+
+    .app__work-item{
+        width: 300px;
+        height: 400px;
+        margin: 0rem 1rem 1rem 1rem;
+        box-shadow: 0rem 0rem 1rem 0rem rgb(214, 214, 214);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+     
+        transition: all 0.45s ease;
+        &:hover{
+            box-shadow: 0 0 20px  rgb(159, 159, 159);
+        }
+    }
+}
+    .app__work-img{
+        img{
+            object-fit: cover;
+            width: 299px;
+            height: 299px;
+            overflow: hidden;
+            box-shadow: 0rem 0rem 0rem 0rem rgb(168, 167, 167);
+           @media screen and (min-width:2000px) {
+              width: 370px;
+              margin: 2rem 4rem;
+           }  
+        }
+    }
+
+    .app__work-hover{
+        position: absolute;
+       
+        
+        div{
+            cursor: pointer;
+          margin:0.5rem ;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background-color: rgba($color: #000000, $alpha: 0.6);
+          color: white;
+          font-size: 30px;
+          transition: all 0.3s ease-in-out;
+          &:hover{
+             background-color: rgba($color: #8b8989, $alpha: 0.7); 
+            }
+       }
+       svg{
+        width: 50%;
+        height: 50%;
+        
+       }
+
+    }
+
+    .app__work-content{
+        margin: 0.5rem 0rem 0.5rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+       
+
+        h3{
+
+            font-size: 20px;
+            height: fit-content;
+            font-weight: 600;
+            overflow: hidden;
+          }
+          p{
+            // width: 600px;
+            font-size: 16px;
+            overflow: hidden;
+            padding: 2px;
+          }
+    }

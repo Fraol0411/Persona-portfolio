@@ -1,0 +1,54 @@
+.testimony{
+    display: flex;
+    flex-direction: column;
+   
+    .inputtes{
+        border: 1px solid gray;
+        width: 400px;
+        
+        .text{
+          width: 90%;
+          height: 80%; 
+                    
+        }
+    }
+
+    .testipart{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+     .div{
+        box-shadow: 0rem 0rem 2rem 0rem rgb(201, 201, 201);
+        background-color: rgb(231, 231, 231);
+        margin: 1rem;
+        width: 300px;
+       
+        .eachcollege{
+            
+            
+            display: flex;
+            margin: 0.5rem;
+            img{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0rem 0rem 2rem 0rem rgb(201, 201, 201);
+            }
+            h3{
+                margin-left: 2rem;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .desc{
+
+        }
+     }
+
+    }
+
+}
